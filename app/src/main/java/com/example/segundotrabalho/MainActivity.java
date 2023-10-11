@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
         Intent it_tela_adicionar_tipo = new Intent(this, AdicionarTipo.class);
         startActivity(it_tela_adicionar_tipo);
     }
+
+    public void abrirTelaListarObjetos(View v) {
+        Intent it_tela_listar_objetos = new Intent(this, ListarObjetos.class);
+        startActivity(it_tela_listar_objetos);
+    }
 }
