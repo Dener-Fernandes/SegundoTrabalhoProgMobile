@@ -9,4 +9,7 @@
     <string name="adicionar_tipo">Adicionar tipo</string>
     <string name="tipo">Tipo</string>
     <string name="descricao">Descrição</string>
+
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
