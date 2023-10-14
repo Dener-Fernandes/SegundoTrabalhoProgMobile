@@ -11,7 +11,9 @@
     <string name="editar_tipo">Editar tipo</string>
     <string name="tipo">Tipo</string>
     <string name="descricao">Descrição</string>
+    <string name="selecione_tipo">SELECIONE TIPO</string>
 
     <string name="salvar">Salvar</string>
     <string name="cancelar">Cancelar</string>
+
 </resources>

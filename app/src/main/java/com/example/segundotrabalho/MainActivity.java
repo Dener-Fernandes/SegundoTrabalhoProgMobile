@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.segundotrabalho.activities.AdicionarTipoActivity;
+import com.example.segundotrabalho.activities.EditarObjetoActivity;
 import com.example.segundotrabalho.activities.EditarTipoActivity;
 import com.example.segundotrabalho.activities.ListarObjetosActivity;
 
@@ -32,8 +33,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it_tela_editar_tipo);
     }
 
+    public void abrirTelaEditarObjeto(View v) {
+        Intent it_tela_editar_objeto = new Intent(this, EditarObjetoActivity.class);
+        startActivity(it_tela_editar_objeto);
+    }
+
     public void abrirTelaListarObjetos(View v) {
         Intent it_tela_listar_objetos = new Intent(this, ListarObjetosActivity.class);
         startActivity(it_tela_listar_objetos);
+    }
+
+    public void sairApp(View v) {
+        this.finish();
     }
 }
