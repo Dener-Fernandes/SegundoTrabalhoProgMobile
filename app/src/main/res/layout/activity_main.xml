@@ -18,45 +18,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonAdicionaTipoId"
+        android:id="@+id/buttonEditarTipoId"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:onClick="abrirTelaAdicionarTIpo"
-        android:text="@string/adicionar_tipo"
+        android:layout_marginTop="104dp"
+        android:onClick="abrirTelaEditarTipo"
+        android:text="@string/editar_tipo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuId" />
 
     <Button
-        android:id="@+id/buttonAdicionarObjetoId"
+        android:id="@+id/buttonEditarObjetoId"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/adicionar_objeto"
+        android:layout_marginTop="52dp"
+        android:text="@string/editar_objeto"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionaTipoId" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditarTipoId" />
 
     <Button
         android:id="@+id/buttonListarObjetosId"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="49dp"
         android:onClick="abrirTelaListarObjetos"
         android:text="@string/listar_objetos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionarObjetoId" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditarObjetoId" />
 
     <Button
         android:id="@+id/buttonSairId"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="61dp"
         android:text="@string/sair"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonListarObjetosId" />
 

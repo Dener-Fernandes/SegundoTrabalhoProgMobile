@@ -3,10 +3,12 @@
     <string name="menu">Menu</string>
 
     <string name="adicionar_objeto">Adicionar objeto</string>
+    <string name="editar_objeto">Editar objeto</string>
     <string name="listar_objetos">Listar objetos</string>
     <string name="sair">Sair</string>
 
     <string name="adicionar_tipo">Adicionar tipo</string>
+    <string name="editar_tipo">Editar tipo</string>
     <string name="tipo">Tipo</string>
     <string name="descricao">Descrição</string>
 
