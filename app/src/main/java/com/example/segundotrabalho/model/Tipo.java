@@ -1,4 +1,4 @@
-package com.example.segundotrabalho;
+package com.example.segundotrabalho.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

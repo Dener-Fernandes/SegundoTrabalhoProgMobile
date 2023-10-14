@@ -1,4 +1,4 @@
-package com.example.segundotrabalho;
+package com.example.segundotrabalho.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-public class AdicionarTipo extends AppCompatActivity {
+import com.example.segundotrabalho.R;
+import com.example.segundotrabalho.model.Tipo;
+import com.example.segundotrabalho.database.AppDatabase;
+
+public class AdicionarTipoActivity extends AppCompatActivity {
     AppDatabase db;
 
 

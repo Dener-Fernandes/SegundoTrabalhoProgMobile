@@ -1,11 +1,13 @@
-package com.example.segundotrabalho;
+package com.example.segundotrabalho.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-public class ListarObjetos extends AppCompatActivity {
+import com.example.segundotrabalho.R;
+
+public class ListarObjetosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
