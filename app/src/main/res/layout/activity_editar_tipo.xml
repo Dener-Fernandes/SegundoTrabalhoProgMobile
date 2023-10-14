@@ -15,7 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="voltarButton"
-        android:text="VOLTAR" />
+        android:text="@string/voltar"/>
 
     <TextView
         android:id="@+id/textView"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:text="EDITAR TIPOS"
+        android:text="@string/editar_tipo"
         android:textSize="35sp" />
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_width="236dp"
         android:layout_height="43dp"
         android:layout_marginStart="32dp"
-        android:hint="TIPO" />
+        android:hint="@string/tipo" />
 
 
     <EditText
@@ -39,7 +39,7 @@
         android:layout_width="242dp"
         android:layout_height="47dp"
         android:layout_marginStart="32dp"
-        android:hint="DESCRIÇÃO" />
+        android:hint="@string/descricao" />
 
     <Button
         android:id="@+id/buttonAdicionar"
@@ -48,7 +48,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:onClick="adicionarTipo"
-        android:text="+ ADICIONAR TIPO" />
+        android:text="@string/adicionar_tipo" />
 
     <ListView
         android:id="@+id/listViewTipos"

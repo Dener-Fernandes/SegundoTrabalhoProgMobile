@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="voltarButton"
-        android:text="VOLTAR" />
+        android:text="@string/voltar"/>
 
     <TextView
         android:id="@+id/textView"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:text="EDITAR OBJETOS"
+        android:text="@string/editar_objeto"
         android:textSize="35sp" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="13dp"
-        android:text="SELECIONAR TIPO:"
+        android:text="@string/selecione_tipo"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerTipo"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Nome do Funcionário" />
+        android:hint="@string/nome_funcionario" />
 
     <Button
         android:id="@+id/buttonSalvar"
@@ -60,7 +60,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:onClick="salvarEdicao"
-        android:text="SALVAR" />
+        android:text="+ ADICIONAR OBJETO" />
 
     <ListView
         android:layout_width="match_parent"
