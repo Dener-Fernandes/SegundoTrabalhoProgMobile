@@ -26,8 +26,8 @@ public class AdicionarTipoActivity extends AppCompatActivity {
 
         int tipoId;
 
-        EditText tipoText = (EditText)findViewById(R.id.textTipoValueId);
-        EditText descricaoText = (EditText)findViewById(R.id.textDescricaoValueId);
+        EditText tipoText = (EditText)findViewById(R.id.textTipo);
+        EditText descricaoText = (EditText)findViewById(R.id.textDescricao);
 
         tipoValue = tipoText.getText().toString();
         descricaoValue = descricaoText.getText().toString();

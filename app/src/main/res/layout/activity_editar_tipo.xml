@@ -15,7 +15,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="voltarButton"
-        android:text="@string/voltar"/>
+        android:text="@string/voltar" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -27,15 +28,14 @@
         android:textSize="35sp" />
 
     <EditText
-        android:id="@+id/editTextTipo"
-        android:layout_width="236dp"
+        android:id="@+id/textTipoValueId"
+        android:layout_width="242dp"
         android:layout_height="43dp"
         android:layout_marginStart="32dp"
         android:hint="@string/tipo" />
 
-
     <EditText
-        android:id="@+id/editDescricaoTipo"
+        android:id="@+id/textDescricaoValueId"
         android:layout_width="242dp"
         android:layout_height="47dp"
         android:layout_marginStart="32dp"
