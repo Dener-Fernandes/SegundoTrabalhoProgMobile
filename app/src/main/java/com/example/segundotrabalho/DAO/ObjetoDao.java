@@ -1,10 +1,12 @@
-package com.example.segundotrabalho;
+package com.example.segundotrabalho.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.segundotrabalho.model.Objeto;
 
 import java.util.List;
 

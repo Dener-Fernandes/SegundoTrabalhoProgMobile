@@ -1,15 +1,24 @@
 <resources>
     <string name="app_name">SegundoTrabalho</string>
-    <string name="menu">Menu</string>
+    <string name="menu">MENU</string>
 
-    <string name="adicionar_objeto">Adicionar objeto</string>
-    <string name="listar_objetos">Listar objetos</string>
-    <string name="sair">Sair</string>
+    <string name="adicionar_objeto">+ ADICIONAR OBJETO</string>
+    <string name="editar_objeto">EDITAR OBJETOS</string>
+    <string name="listar_objetos">LISTAR OBJETOS</string>
+    <string name="sair">SAIR</string>
 
-    <string name="adicionar_tipo">Adicionar tipo</string>
-    <string name="tipo">Tipo</string>
-    <string name="descricao">Descrição</string>
+    <string name="adicionar_tipo">+ ADICIONAR TIPO</string>
+    <string name="editar_tipo">EDITAR TIPOS</string>
+    <string name="tipo">TIPO</string>
+    <string name="descricao">DESCRIÇÃO</string>
+    <string name="selecione_tipo">SELECIONE TIPO:</string>
+    <string name="nome_funcionario">NOME DO FUNCIONÁRIO</string>
 
-    <string name="salvar">Salvar</string>
-    <string name="cancelar">Cancelar</string>
+    <string name="salvar">SALVAR</string>
+    <string name="cancelar">CANCELAR</string>
+
+    <string name="voltar">VOLTAR</string>
+
+
+
 </resources>

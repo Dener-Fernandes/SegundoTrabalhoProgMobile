@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdicionarTipo">
+    tools:context=".activities.AdicionarTipoActivity">
 
     <Button
         android:id="@+id/buttonVoltarId"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/menuId" />
 
     <EditText
-        android:id="@+id/textTipoValueId"
+        android:id="@+id/textTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/menuId" />
 
     <EditText
-        android:id="@+id/textDescricaoValueId"
+        android:id="@+id/textDescricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDescricaoValueId" />
+        app:layout_constraintTop_toBottomOf="@+id/textDescricao" />
 
     <Button
         android:id="@+id/button3"
@@ -94,5 +94,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/textDescricaoValueId" />
+        app:layout_constraintTop_toBottomOf="@+id/textDescricao" />
 </androidx.constraintlayout.widget.ConstraintLayout>

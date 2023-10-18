@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/menuId"
@@ -18,46 +18,51 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonAdicionaTipoId"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:onClick="abrirTelaAdicionarTIpo"
-        android:text="@string/adicionar_tipo"
+        android:id="@+id/buttonEditarTipoId"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="104dp"
+        android:onClick="abrirTelaEditarTipo"
+        android:text="@string/editar_tipo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuId" />
+        app:layout_constraintTop_toBottomOf="@id/menuId"
+        app:layout_constraintWidth_percent="0.6" />
 
     <Button
-        android:id="@+id/buttonAdicionarObjetoId"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/adicionar_objeto"
+        android:id="@+id/buttonEditarObjetoId"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:onClick="abrirTelaEditarObjeto"
+        android:text="@string/editar_objeto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionaTipoId" />
+        app:layout_constraintTop_toBottomOf="@id/buttonEditarTipoId"
+        app:layout_constraintWidth_percent="0.6" />
 
     <Button
         android:id="@+id/buttonListarObjetosId"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
         android:onClick="abrirTelaListarObjetos"
         android:text="@string/listar_objetos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdicionarObjetoId" />
+        app:layout_constraintTop_toBottomOf="@id/buttonEditarObjetoId"
+        app:layout_constraintWidth_percent="0.6" />
 
     <Button
         android:id="@+id/buttonSairId"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:onClick="sairApp"
         android:text="@string/sair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonListarObjetosId" />
+        app:layout_constraintTop_toBottomOf="@id/buttonListarObjetosId"
+        app:layout_constraintWidth_percent="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

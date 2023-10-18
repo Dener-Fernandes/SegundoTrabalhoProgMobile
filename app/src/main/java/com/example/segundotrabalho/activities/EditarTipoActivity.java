@@ -1,23 +1,51 @@
-package com.example.segundotrabalho;
+package com.example.segundotrabalho.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 
-public class AdicionarTipo extends AppCompatActivity {
+import com.example.segundotrabalho.R;
+import com.example.segundotrabalho.database.AppDatabase;
+import com.example.segundotrabalho.model.Tipo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EditarTipoActivity extends AppCompatActivity {
+
     AppDatabase db;
 
+    ListView list;
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adicionar_tipo);
+        setContentView(R.layout.activity_editar_tipo);
+
+        list = findViewById(R.id.listViewTipos);
+
+        db = AppDatabase.getAppDatabase(getApplicationContext());
+
+        List<Tipo> tipos = db.tipoDao().getAll();
+
+        List<String> tiposDescricao = new ArrayList<>();
+
+        for (Tipo tipo : tipos) {
+           tiposDescricao.add(tipo.tipo);
+        }
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, tiposDescricao);
+        list.setAdapter(adapter);
     }
 
-    public void salvarTipo(View v) {
+    //NÃO ESTÁ FUNCIONANDO AINDA
+    public void adicionarTipo(View v) {
         String tipoValue, descricaoValue;
 
         int tipoId;
@@ -42,7 +70,6 @@ public class AdicionarTipo extends AppCompatActivity {
         }
 
     }
-
     public void voltarButton(View v) {
         this.finish();
     }
