@@ -20,4 +20,11 @@ public class Tipo {
     }
 
     public int getTipoId() { return tipoId; }
+
+    public void setTipoId(long resultado) {
+    }
+
+    public String getTipo() { return tipo; }
+    public String getDescricao() { return descricao; }
+
 }

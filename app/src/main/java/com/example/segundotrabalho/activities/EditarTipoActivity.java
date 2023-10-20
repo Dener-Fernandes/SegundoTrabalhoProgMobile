@@ -1,27 +1,27 @@
 package com.example.segundotrabalho.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Tipo;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class EditarTipoActivity extends AppCompatActivity {
 
     AppDatabase db;
-
     ListView list;
-    ArrayAdapter adapter;
+    TipoAdapter adapter;
+    EditText tipoText, descricaoText;
+    private TextView errorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,48 +29,44 @@ public class EditarTipoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_editar_tipo);
 
         list = findViewById(R.id.listViewTipos);
-
         db = AppDatabase.getAppDatabase(getApplicationContext());
 
         List<Tipo> tipos = db.tipoDao().getAll();
-
-        List<String> tiposDescricao = new ArrayList<>();
-
-        for (Tipo tipo : tipos) {
-           tiposDescricao.add(tipo.tipo);
-        }
-
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, tiposDescricao);
+        adapter = new TipoAdapter(this, tipos);
         list.setAdapter(adapter);
+
+        tipoText = findViewById(R.id.textTipoValueId);
+        descricaoText = findViewById(R.id.textDescricaoValueId);
+        errorText = findViewById(R.id.textViewError);
     }
 
-    //NÃO ESTÁ FUNCIONANDO AINDA
     public void adicionarTipo(View v) {
-        String tipoValue, descricaoValue;
+        String tipoValue = tipoText.getText().toString();
+        String descricaoValue = descricaoText.getText().toString();
 
-        int tipoId;
+        if (tipoValue.isEmpty() || descricaoValue.isEmpty()) {
+            // Campos vazios, exiba a mensagem de erro
+            errorText.setVisibility(View.VISIBLE);
+        } else {
 
-        EditText tipoText = (EditText)findViewById(R.id.textTipoValueId);
-        EditText descricaoText = (EditText)findViewById(R.id.textDescricaoValueId);
+            Tipo tipo = new Tipo(tipoValue, descricaoValue);
 
-        tipoValue = tipoText.getText().toString();
-        descricaoValue = descricaoText.getText().toString();
+            long resultado = db.tipoDao().insertTipo(tipo);
 
-        Tipo tipo = new Tipo(tipoValue, descricaoValue);
-
-        db = AppDatabase.getAppDatabase(getApplicationContext());
-
-        long resultado = db.tipoDao().insertTipo(tipo);
-
-        if (resultado >= 0) {
-            Log.d("Inserção", "Inserção bem-sucedida. ID do objeto inserido: " + resultado);
+            if (resultado >= 0) {
+                tipo.setTipoId(resultado); // Atualiza o ID do objeto Tipo com o valor gerado
+                adapter.addTipo(tipo); // Adiciona o novo tipo à lista
+                tipoText.setText(""); // Limpa o campo de tipo
+                descricaoText.setText(""); // Limpa o campo de descrição
+                errorText.setVisibility(View.GONE);
+                Log.d("Inserção", "Inserção bem-sucedida. ID do objeto inserido: " + resultado);
+            } else {
+                Log.e("Inserção", "Falha na inserção");
+            }
         }
-        else {
-            Log.e("Inserção", "Falha na inserção");
-        }
-
     }
+
     public void voltarButton(View v) {
-        this.finish();
+        finish();
     }
 }
