@@ -25,6 +25,25 @@ public class Objeto {
         this.nomeFuncionario = nomeFuncionario;
     }
 
+    // Implementar lógica para trazer o tipo do objeto
+    //public int getTipo() {
+    //    return {};
+    //}
+
+
+    public int getNumPatrim() {
+        return numPatrim;
+    }
+
+    public String getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public String getNomeFuncionario() {
+        return nomeFuncionario;
+    }
+
+
 }
 
 
