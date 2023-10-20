@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="Preencha todos os campos"
         android:textColor="@color/red"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="30dp"
         android:visibility="gone" />
     <Button
         android:id="@+id/buttonAdicionar"
