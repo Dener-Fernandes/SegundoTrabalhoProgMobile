@@ -19,6 +19,11 @@ public class EditarObjetoActivity extends AppCompatActivity {
 
     AppDatabase db;
     Spinner spinner;
+   // ListView list;
+   // ObjetoAdapter adapter;
+   // EditText tipoText, descricaoText;
+   // private TextView errorText;
+   // List<Objeto> objetos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +33,15 @@ public class EditarObjetoActivity extends AppCompatActivity {
         db = AppDatabase.getAppDatabase(getApplicationContext());
         spinner = findViewById(R.id.spinnerTipo);
         populeSpinner();
-    }
 
+        /*
+        //adicionar adapter
+        objetos = db.objetoDao().getAll();
+        adapter = new ObjetoAdapter(this, objetos);
+        list.setAdapter(adapter);
+        */
+
+    }
     // Função para popular o Spinner com os tipos disponíveis
     private void populeSpinner() {
         // Obtém a lista de tipos do banco de dados
@@ -49,6 +61,7 @@ public class EditarObjetoActivity extends AppCompatActivity {
 
 
 
+    //Fazer para salvar objeto, posteriormente adicionarei o adapter aí
     public void salvarTipo(View v) {
         String tipoValue, descricaoValue;
 
