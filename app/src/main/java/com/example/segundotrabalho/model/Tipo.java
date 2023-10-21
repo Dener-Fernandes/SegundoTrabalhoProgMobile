@@ -22,6 +22,7 @@ public class Tipo {
     public int getTipoId() { return tipoId; }
 
     public void setTipoId(long resultado) {
+        this.tipoId = (int) resultado;
     }
 
     public String getTipo() { return tipo; }

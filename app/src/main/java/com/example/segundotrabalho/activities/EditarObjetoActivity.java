@@ -90,12 +90,14 @@ public class EditarObjetoActivity extends AppCompatActivity {
 
       long resultado = db.objetoDao().insertObjeto(objeto);
 
-//        if (resultado >= 0) {
-//            Log.d("Inserção", "Inserção bem-sucedida. ID do objeto inserido: " + resultado);
-//        }
-//        else {
-//            Log.e("Inserção", "Falha na inserção");
-//        }
+        if (resultado >= 0) {
+            objeto.setNumPatrim(resultado);
+            adapter.addObjeto(objeto);
+            nomeFuncionarioText.setText("");
+        }
+        else {
+            Log.e("Inserção", "Falha na inserção");
+        }
 
     }
 

@@ -2,7 +2,6 @@ package com.example.segundotrabalho.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,6 @@ public class TipoAdapter extends BaseAdapter {
         tipo.setTipoId((int) tipo.getTipoId()); // Atualiza o ID do objeto Tipo com o valor gerado
         tipoList.add(tipo);
         notifyDataSetChanged(); // Notifica o adaptador sobre a adição
-
     }
 
     @Override
@@ -59,8 +57,8 @@ public class TipoAdapter extends BaseAdapter {
 
         TextView textViewNomeTipo = convertView.findViewById(R.id.textViewNomeTipo);
         TextView textViewDescricao = convertView.findViewById(R.id.textViewDescricao); // Novo TextView para descrição
-        Button buttonEditar = convertView.findViewById(R.id.buttonEditar);
-        Button buttonExcluir = convertView.findViewById(R.id.buttonExcluir);
+        Button buttonEditar = convertView.findViewById(R.id.buttonEditarObjeto);
+        Button buttonExcluir = convertView.findViewById(R.id.buttonExcluirObjeto);
 
         Tipo tipo = tipoList.get(position);
 
@@ -74,8 +72,6 @@ public class TipoAdapter extends BaseAdapter {
             it_tela_edicao_tipo.putExtra("tipoId", tipo.getTipoId());
             it_tela_edicao_tipo.putExtra("tipo", tipo.getTipo());
             it_tela_edicao_tipo.putExtra("descricao", tipo.getDescricao());
-
-//            Log.d("Tag", "valor " + tipo.getDescricao());
 
             context.startActivity(it_tela_edicao_tipo);
         });

@@ -63,7 +63,6 @@ public class EditarTipoActivity extends AppCompatActivity {
                 tipoText.setText(""); // Limpa o campo de tipo
                 descricaoText.setText(""); // Limpa o campo de descrição
                 errorText.setVisibility(View.GONE);
-                Log.d("Inserção", "Inserção bem-sucedida. ID do objeto inserido: " + resultado);
             } else {
                 Log.e("Inserção", "Falha na inserção");
             }

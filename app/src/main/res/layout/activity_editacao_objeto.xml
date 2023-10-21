@@ -12,8 +12,10 @@
         android:layout_width="130dp"
         android:layout_height="54dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="292dp"
         android:text="@string/salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/buttonCancelar"
         app:layout_constraintTop_toBottomOf="@id/spinnerTipo" />
 
@@ -21,10 +23,11 @@
         android:id="@+id/buttonCancelar"
         android:layout_width="134dp"
         android:layout_height="56dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="292dp"
         android:text="@string/cancelar"
-        app:layout_constraintTop_toBottomOf="@id/spinnerTipo"
-        tools:layout_editor_absoluteX="55dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerTipo" />
 
     <TextView
         android:id="@+id/textViewEditarObjeto"
@@ -62,9 +65,12 @@
         android:id="@+id/editTextNomeFuncionario"
         android:layout_width="340dp"
         android:layout_height="60dp"
+        android:layout_marginTop="212dp"
         android:hint="@string/nome_funcionario"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="311dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditarObjeto" />
 
     <!-- Adicione outros TextInputLayouts e TextInputEditTexts conforme necessário para outros campos -->
 

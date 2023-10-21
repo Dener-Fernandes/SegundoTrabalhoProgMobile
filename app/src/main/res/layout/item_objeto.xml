@@ -67,14 +67,14 @@
 
 
             <Button
-                android:id="@+id/buttonEditar"
+                android:id="@+id/buttonEditarObjeto"
                 android:layout_width="101dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Editar" />
 
             <Button
-                android:id="@+id/buttonExcluir"
+                android:id="@+id/buttonExcluirObjeto"
                 android:layout_width="101dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center_horizontal"

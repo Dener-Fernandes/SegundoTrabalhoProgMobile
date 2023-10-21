@@ -50,7 +50,5 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         db = AppDatabase.getAppDatabase(getApplicationContext());
 
         db.tipoDao().updateTipo(tipo);
-
-
     }
 }
