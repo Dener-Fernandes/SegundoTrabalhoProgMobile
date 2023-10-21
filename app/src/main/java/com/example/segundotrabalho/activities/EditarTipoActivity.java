@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.segundotrabalho.R;
+import com.example.segundotrabalho.adapters.TipoAdapter;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Tipo;
 

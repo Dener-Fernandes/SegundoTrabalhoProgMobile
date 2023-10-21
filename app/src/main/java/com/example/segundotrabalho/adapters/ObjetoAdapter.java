@@ -1,4 +1,4 @@
-package com.example.segundotrabalho.activities;
+package com.example.segundotrabalho.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
