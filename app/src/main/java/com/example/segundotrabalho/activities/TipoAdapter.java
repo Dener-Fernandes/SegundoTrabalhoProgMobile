@@ -27,10 +27,9 @@ public class TipoAdapter extends BaseAdapter {
     }
 
     public void addTipo(Tipo tipo) {
-
-            tipo.setTipoId((int) tipo.getTipoId()); // Atualiza o ID do objeto Tipo com o valor gerado
-            tipoList.add(tipo);
-            notifyDataSetChanged(); // Notifica o adaptador sobre a adição
+        tipo.setTipoId((int) tipo.getTipoId()); // Atualiza o ID do objeto Tipo com o valor gerado
+        tipoList.add(tipo);
+        notifyDataSetChanged(); // Notifica o adaptador sobre a adição
 
     }
 
