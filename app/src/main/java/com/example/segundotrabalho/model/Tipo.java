@@ -20,4 +20,15 @@ public class Tipo {
     }
 
     public int getTipoId() { return tipoId; }
+
+    public void setTipoId(long resultado) {
+    }
+
+    public String getTipo() { return tipo; }
+    public String getDescricao() { return descricao; }
+    @Override
+    public String toString() {
+        return tipo; // Retorna o nome do tipo ao chamar o método toString
+    }
+
 }

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SegundoTrabalho"
         tools:targetApi="31">
         <activity
+            android:name=".activities.EditacaoObjetoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EdicaoTipoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.EditarTipoActivity"
             android:exported="false" />
         <activity

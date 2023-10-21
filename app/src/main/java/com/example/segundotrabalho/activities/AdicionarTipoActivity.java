@@ -1,14 +1,10 @@
 package com.example.segundotrabalho.activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-
 import com.example.segundotrabalho.R;
-import com.example.segundotrabalho.model.Tipo;
 import com.example.segundotrabalho.database.AppDatabase;
 
 public class AdicionarTipoActivity extends AppCompatActivity {
@@ -21,6 +17,7 @@ public class AdicionarTipoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adicionar_tipo);
     }
 
+    /*
     public void salvarTipo(View v) {
         String tipoValue, descricaoValue;
 
@@ -50,4 +47,6 @@ public class AdicionarTipoActivity extends AppCompatActivity {
     public void voltarButton(View v) {
         this.finish();
     }
+    */
+
 }

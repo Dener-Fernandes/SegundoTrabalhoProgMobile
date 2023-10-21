@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- item_objeto.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewNomeTipo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="231dp"
+            android:layout_height="79dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewNumPatrimonio"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="3"
+                android:gravity="top"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewNomeFuncionario"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="3"
+                android:gravity="top"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewDataRegistro"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="3"
+                android:gravity="top"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/buttonExcluir"
+                android:layout_width="101dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Excluir" />
+
+            <Button
+                android:id="@+id/buttonEditar"
+                android:layout_width="101dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Editar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
