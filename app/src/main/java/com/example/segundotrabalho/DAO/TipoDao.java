@@ -17,7 +17,7 @@ public interface TipoDao {
     @Query("SELECT * FROM tipo")
     List<Tipo> getAll();
     @Update
-    public void updateObjeto(Tipo... tipo);
+    public void updateTipo(Tipo... tipo);
     @Delete
-    public void deleteObjeto(Tipo... tipo);
+    public void deleteTipo(Tipo... tipo);
 }

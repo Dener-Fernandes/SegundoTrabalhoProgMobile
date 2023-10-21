@@ -41,7 +41,6 @@ public class EditarTipoActivity extends AppCompatActivity {
         adapter = new TipoAdapter(this, tipos);
         list.setAdapter(adapter);
 
-
     }
 
     public void adicionarTipo(View v) {

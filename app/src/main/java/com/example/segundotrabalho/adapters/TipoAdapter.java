@@ -1,6 +1,8 @@
 package com.example.segundotrabalho.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.segundotrabalho.DAO.TipoDao;
 import com.example.segundotrabalho.R;
+import com.example.segundotrabalho.activities.EdicaoTipoActivity;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Tipo;
 
@@ -66,11 +69,19 @@ public class TipoAdapter extends BaseAdapter {
 
         // Configurar os cliques dos botões de edição e exclusão
         buttonEditar.setOnClickListener(view -> {
-            // Implemente a lógica de edição aqui usando o objeto tipo
+            Intent it_tela_edicao_tipo = new Intent(context, EdicaoTipoActivity.class);
+
+            it_tela_edicao_tipo.putExtra("tipoId", tipo.getTipoId());
+            it_tela_edicao_tipo.putExtra("tipo", tipo.getTipo());
+            it_tela_edicao_tipo.putExtra("descricao", tipo.getDescricao());
+
+//            Log.d("Tag", "valor " + tipo.getDescricao());
+
+            context.startActivity(it_tela_edicao_tipo);
         });
 
         buttonExcluir.setOnClickListener(view -> {
-            tipoDao.deleteObjeto(tipo);
+            tipoDao.deleteTipo(tipo);
             tipoList.remove(position);
             notifyDataSetChanged(); // Notifica o adaptador sobre a remoção
         });
