@@ -25,18 +25,30 @@
         android:text="@string/editar_objeto"
         android:textSize="35sp" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/selecione_tipo"
+        android:textSize="20sp" />
+
     <!-- Adicione um Spinner para selecionar o objeto a ser editado -->
+
     <Spinner
         android:id="@+id/spinnerTipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp" />
+        android:layout_width="242dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="34dp" />
 
     <EditText
         android:id="@+id/editTextNomeFuncionario"
-        android:layout_width="match_parent"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+
+        android:layout_marginStart="34dp"
         android:hint="@string/nome_funcionario" />
 
     <Button
