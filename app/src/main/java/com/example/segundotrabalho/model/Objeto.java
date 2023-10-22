@@ -30,6 +30,9 @@ public class Objeto {
     //    return {};
     //}
 
+    public void setNumPatrim(long resultado) {
+        this.numPatrim = (int) resultado;
+    }
 
     public int getNumPatrim() {
         return numPatrim;

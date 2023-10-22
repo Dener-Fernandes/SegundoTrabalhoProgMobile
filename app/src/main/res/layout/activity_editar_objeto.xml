@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:onClick="salvarEdicao"
+        android:onClick="adicionarObjeto"
         android:text="+ ADICIONAR OBJETO" />
 
     <ListView
@@ -66,5 +66,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:dividerHeight="1dp"
+        android:scrollbars="vertical"
+        />
 </LinearLayout>
