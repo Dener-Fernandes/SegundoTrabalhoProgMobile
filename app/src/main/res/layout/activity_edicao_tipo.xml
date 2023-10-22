@@ -12,6 +12,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="148dp"
+        android:onClick="voltarButton"
         android:text="@string/cancelar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descricaoEdicaoText" />

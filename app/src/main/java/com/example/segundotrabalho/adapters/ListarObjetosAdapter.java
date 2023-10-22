@@ -53,7 +53,6 @@ public class ListarObjetosAdapter  extends BaseAdapter {
         textNomeTipoObjeto.setText("Tipo: " + String.valueOf(tipoObjeto.getTipo()));
         textNomeFuncionarioTipoObjeto.setText("Nome Funcionário: " + tipoObjeto.getNomeFuncionario());
 
-
         return convertView;
     }
 }

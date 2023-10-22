@@ -26,6 +26,8 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edicao_tipo);
 
+        db = AppDatabase.getAppDatabase(getApplicationContext());
+
         tipoEdicaoText = findViewById(R.id.tipoEdicaoText);
         descricaoEdicaoText = findViewById(R.id.descricaoEdicaoText);
 
@@ -47,8 +49,10 @@ public class EdicaoTipoActivity extends AppCompatActivity {
 
         tipo.tipoId = tipoId;
 
-        db = AppDatabase.getAppDatabase(getApplicationContext());
-
         db.tipoDao().updateTipo(tipo);
+    }
+
+    public void voltarButton(View v) {
+        this.finish();
     }
 }

@@ -38,6 +38,8 @@ public class Objeto {
         return numPatrim;
     }
 
+    public int getTipoIdFk() { return tipoIdFk; }
+
     public String getDataRegistro() {
         return dataRegistro;
     }

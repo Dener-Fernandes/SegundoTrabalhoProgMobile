@@ -63,8 +63,8 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
         buttonEditarObjeto.setOnClickListener(view -> {
             Intent it_tela_editacao_objeto = new Intent(context, EditacaoObjetoActivity.class);
 
-            it_tela_editacao_objeto.putExtra("objetoId", objeto.getNumPatrim());
-
+            it_tela_editacao_objeto.putExtra("numPatrim", objeto.getNumPatrim());
+            it_tela_editacao_objeto.putExtra("tipoIdFk", objeto.getTipoIdFk());
             it_tela_editacao_objeto.putExtra("nomeFuncionario", objeto.getNomeFuncionario());
 
             context.startActivity(it_tela_editacao_objeto);
