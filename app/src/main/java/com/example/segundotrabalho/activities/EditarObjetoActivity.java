@@ -35,7 +35,7 @@ public class EditarObjetoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_objeto);
 
-        list = findViewById(R.id.listViewObjetos);
+        list = findViewById(R.id.listViewTipoObjeto);
         nomeFuncionarioText = findViewById(R.id.editTextNomeFuncionario);
 
         db = AppDatabase.getAppDatabase(getApplicationContext());
@@ -79,8 +79,6 @@ public class EditarObjetoActivity extends AppCompatActivity {
         String dataRegistro = dateFormat.format(new Date()); // Obtém a data atual e formata como String
 
         nomeFuncionarioValue = nomeFuncionarioText.getText().toString();
-
-        db = AppDatabase.getAppDatabase(getApplicationContext());
 
         Tipo objectSelected = (Tipo) spinner.getSelectedItem();
 

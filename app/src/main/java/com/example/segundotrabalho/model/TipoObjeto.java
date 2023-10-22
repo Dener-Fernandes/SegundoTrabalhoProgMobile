@@ -2,11 +2,18 @@ package com.example.segundotrabalho.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity(tableName = "objeto")
-public class Objeto {
-    @PrimaryKey(autoGenerate = true)
+@Entity(tableName = "tipo_objeto")
+public class TipoObjeto {
+    // Tipo
+    @ColumnInfo(name = "tipo_id")
+    public int tipoId;
+
+    public String tipo;
+
+    public String descricao;
+
+    // Objeto
     @ColumnInfo(name = "num_patrim")
     public int numPatrim;
 
@@ -19,17 +26,15 @@ public class Objeto {
     @ColumnInfo(name = "nome_funcionario")
     public String nomeFuncionario;
 
-    public Objeto(int tipoIdFk, String dataRegistro, String nomeFuncionario) {
-        this.tipoIdFk = tipoIdFk;
-        this.dataRegistro = dataRegistro;
-        this.nomeFuncionario = nomeFuncionario;
-    }
+    // Tipo
+    public int getTipoId() { return tipoId; }
 
-    // Implementar lógica para trazer o tipo do objeto
-    //public int getTipo() {
-    //    return {};
-    //}
+    public void setTipoId(long resultado) { this.tipoId = (int) resultado; }
 
+    public String getTipo() { return tipo; }
+    public String getDescricao() { return descricao; }
+
+    // Objetos
     public void setNumPatrim(long resultado) {
         this.numPatrim = (int) resultado;
     }
@@ -45,8 +50,4 @@ public class Objeto {
     public String getNomeFuncionario() {
         return nomeFuncionario;
     }
-
-
 }
-
-
