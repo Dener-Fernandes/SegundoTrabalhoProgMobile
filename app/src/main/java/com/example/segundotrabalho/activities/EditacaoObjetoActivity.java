@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +27,8 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
     int numPatrim, tipoIdFk;
     String nomeFuncionario;
 
+    private TextView errorText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,8 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
         nomeFuncionario = getIntent().getStringExtra("nomeFuncionario");
 
         editTextNomeFuncionario.setText(nomeFuncionario);
+
+        errorText = findViewById(R.id.textViewErrorEditacaoObjeto);
 
         spinner = findViewById(R.id.spinnerTipo);
         populeSpinner();
@@ -71,12 +76,13 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
 
         novoNomeFuncionario = editTextNomeFuncionario.getText().toString();
 
-        Objeto objeto = new Objeto(tipoIdFk, dataRegistro, novoNomeFuncionario);
-
-        objeto.setNumPatrim(numPatrim);
-
-        db.objetoDao().updateObjeto(objeto);
-
+        if (novoNomeFuncionario.isEmpty()) {
+            errorText.setVisibility(View.VISIBLE);
+        } else {
+            Objeto objeto = new Objeto(tipoIdFk, dataRegistro, novoNomeFuncionario);
+            objeto.setNumPatrim(numPatrim);
+            db.objetoDao().updateObjeto(objeto);
+        }
     }
 
     public void voltarButton(View v) {

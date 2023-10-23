@@ -19,5 +19,7 @@
     <string name="excluir">EXCLUIR</string>
     <string name="voltar">VOLTAR</string>
 
+    <string name="preencher_campos">Preencha todos os campos</string>
+
 
 </resources>

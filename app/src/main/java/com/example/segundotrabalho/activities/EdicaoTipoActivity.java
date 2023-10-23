@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.database.AppDatabase;
@@ -21,6 +22,8 @@ public class EdicaoTipoActivity extends AppCompatActivity {
 
     String tipo, descricaoTipo;
 
+    private TextView errorText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,8 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         tipo = getIntent().getStringExtra("tipo");
         descricaoTipo = getIntent().getStringExtra("descricao");
 
+        errorText = findViewById(R.id.textViewErrorEdicaoTipo);
+
         tipoEdicaoText.setText(tipo);
         descricaoEdicaoText.setText(descricaoTipo);
     }
@@ -45,11 +50,13 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         novoTipo = tipoEdicaoText.getText().toString();
         novaDescricao = descricaoEdicaoText.getText().toString();
 
-        Tipo tipo = new Tipo(novoTipo, novaDescricao);
-
-        tipo.tipoId = tipoId;
-
-        db.tipoDao().updateTipo(tipo);
+        if (novoTipo.isEmpty() || novaDescricao.isEmpty()) {
+            errorText.setVisibility(View.VISIBLE);
+        } else {
+            Tipo tipo = new Tipo(novoTipo, novaDescricao);
+            tipo.tipoId = tipoId;
+            db.tipoDao().updateTipo(tipo);
+        }
     }
 
     public void voltarButton(View v) {

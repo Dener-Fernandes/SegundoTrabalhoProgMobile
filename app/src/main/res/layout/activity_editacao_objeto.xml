@@ -74,6 +74,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEditarObjeto" />
 
-    <!-- Adicione outros TextInputLayouts e TextInputEditTexts conforme necessário para outros campos -->
+    <TextView
+        android:id="@+id/textViewErrorEditacaoObjeto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/preencher_campos"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeFuncionario" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

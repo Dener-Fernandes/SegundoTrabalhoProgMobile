@@ -51,6 +51,15 @@
         android:layout_marginStart="34dp"
         android:hint="@string/nome_funcionario" />
 
+    <TextView
+        android:id="@+id/textViewErrorEditarObjeto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="@string/preencher_campos"
+        android:textColor="@color/red"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/buttonSalvar"
         android:layout_width="wrap_content"
