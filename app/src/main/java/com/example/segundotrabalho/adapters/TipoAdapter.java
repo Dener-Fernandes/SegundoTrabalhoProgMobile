@@ -55,8 +55,8 @@ public class TipoAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_tipo, parent, false);
         }
 
-        TextView textViewNomeTipo = convertView.findViewById(R.id.textViewNomeTipo);
-        TextView textViewDescricao = convertView.findViewById(R.id.textViewDescricao); // Novo TextView para descrição
+        TextView textViewNomeTipo = convertView.findViewById(R.id.textNomeTipoObjeto);
+        TextView textViewDescricao = convertView.findViewById(R.id.textDescricaoTipoObjeto); // Novo TextView para descrição
         Button buttonEditar = convertView.findViewById(R.id.buttonEditarObjeto);
         Button buttonExcluir = convertView.findViewById(R.id.buttonExcluirObjeto);
 

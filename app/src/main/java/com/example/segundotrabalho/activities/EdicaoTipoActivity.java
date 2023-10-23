@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.database.AppDatabase;
@@ -21,10 +22,14 @@ public class EdicaoTipoActivity extends AppCompatActivity {
 
     String tipo, descricaoTipo;
 
+    private TextView errorText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edicao_tipo);
+
+        db = AppDatabase.getAppDatabase(getApplicationContext());
 
         tipoEdicaoText = findViewById(R.id.tipoEdicaoText);
         descricaoEdicaoText = findViewById(R.id.descricaoEdicaoText);
@@ -32,6 +37,8 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         tipoId = getIntent().getIntExtra("tipoId", -1);
         tipo = getIntent().getStringExtra("tipo");
         descricaoTipo = getIntent().getStringExtra("descricao");
+
+        errorText = findViewById(R.id.textViewErrorEdicaoTipo);
 
         tipoEdicaoText.setText(tipo);
         descricaoEdicaoText.setText(descricaoTipo);
@@ -43,12 +50,16 @@ public class EdicaoTipoActivity extends AppCompatActivity {
         novoTipo = tipoEdicaoText.getText().toString();
         novaDescricao = descricaoEdicaoText.getText().toString();
 
-        Tipo tipo = new Tipo(novoTipo, novaDescricao);
+        if (novoTipo.isEmpty() || novaDescricao.isEmpty()) {
+            errorText.setVisibility(View.VISIBLE);
+        } else {
+            Tipo tipo = new Tipo(novoTipo, novaDescricao);
+            tipo.tipoId = tipoId;
+            db.tipoDao().updateTipo(tipo);
+        }
+    }
 
-        tipo.tipoId = tipoId;
-
-        db = AppDatabase.getAppDatabase(getApplicationContext());
-
-        db.tipoDao().updateTipo(tipo);
+    public void voltarButton(View v) {
+        this.finish();
     }
 }

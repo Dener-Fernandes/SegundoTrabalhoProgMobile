@@ -1,17 +1,22 @@
 package com.example.segundotrabalho.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.database.AppDatabase;
+import com.example.segundotrabalho.model.Objeto;
 import com.example.segundotrabalho.model.Tipo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class EditacaoObjetoActivity extends AppCompatActivity {
@@ -19,7 +24,10 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
     AppDatabase db;
     private Spinner spinner;
     private EditText editTextNomeFuncionario; // Adicione outros campos conforme necessário
-    private Button buttonSalvar, buttonCancelar;
+    int numPatrim, tipoIdFk;
+    String nomeFuncionario;
+
+    private TextView errorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,28 +39,17 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
         // Inicialize os componentes da interface do usuário
 
         editTextNomeFuncionario = findViewById(R.id.editTextNomeFuncionario); // Adicione outros campos conforme necessário
-        buttonSalvar = findViewById(R.id.buttonSalvar);
-        buttonCancelar = findViewById(R.id.buttonCancelar);
+
+        numPatrim = getIntent().getIntExtra("numPatrim", -1);
+        tipoIdFk = getIntent().getIntExtra("tipoIdFk", -1);
+        nomeFuncionario = getIntent().getStringExtra("nomeFuncionario");
+
+        editTextNomeFuncionario.setText(nomeFuncionario);
+
+        errorText = findViewById(R.id.textViewErrorEditacaoObjeto);
+
         spinner = findViewById(R.id.spinnerTipo);
         populeSpinner();
-
-        // Configurar os cliques dos botões
-        /*
-        buttonSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                salvarEdicao(); // Implemente essa função para salvar as edições
-            }
-        });
-
-        buttonCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cancelarEdicao(); // Implemente essa função para cancelar a edição
-            }
-        });
-
-         */
     }
 
     private void populeSpinner() {
@@ -71,6 +68,24 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
         }
     }
 
+    public void atualizarObjeto(View v) {
+        String novoNomeFuncionario;
 
-    // Implemente as funções salvarEdicao() e cancelarEdicao() conforme necessário
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Define o formato da data desejado
+        String dataRegistro = dateFormat.format(new Date()); // Obtém a data atual e formata como String
+
+        novoNomeFuncionario = editTextNomeFuncionario.getText().toString();
+
+        if (novoNomeFuncionario.isEmpty()) {
+            errorText.setVisibility(View.VISIBLE);
+        } else {
+            Objeto objeto = new Objeto(tipoIdFk, dataRegistro, novoNomeFuncionario);
+            objeto.setNumPatrim(numPatrim);
+            db.objetoDao().updateObjeto(objeto);
+        }
+    }
+
+    public void voltarButton(View v) {
+        this.finish();
+    }
 }

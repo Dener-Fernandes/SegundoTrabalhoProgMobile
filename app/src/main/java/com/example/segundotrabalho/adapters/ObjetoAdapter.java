@@ -11,11 +11,9 @@ import android.widget.TextView;
 
 import com.example.segundotrabalho.DAO.ObjetoDao;
 import com.example.segundotrabalho.R;
-import com.example.segundotrabalho.activities.EdicaoTipoActivity;
 import com.example.segundotrabalho.activities.EditacaoObjetoActivity;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Objeto;
-import com.example.segundotrabalho.model.Tipo;
 
 import java.util.List;
 
@@ -47,10 +45,10 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
         }
 
         // Configure as TextViews do layout item_objeto.xml
-        TextView textViewNomeTipo = convertView.findViewById(R.id.textViewNomeTipo);
-        TextView textViewNumPatrimonio = convertView.findViewById(R.id.textViewNumPatrimonio);
-        TextView textViewNomeFuncionario = convertView.findViewById(R.id.textViewNomeFuncionario);
-        TextView textViewDataRegistro = convertView.findViewById(R.id.textViewDataRegistro);
+        TextView textViewNomeTipo = convertView.findViewById(R.id.textNomeTipoObjeto);
+        TextView textViewNumPatrimonio = convertView.findViewById(R.id.textNumPatrimonioTipoObjeto);
+        TextView textViewNomeFuncionario = convertView.findViewById(R.id.textNomeFuncionarioTipoObjeto);
+        TextView textViewDataRegistro = convertView.findViewById(R.id.textDataRegistroTipoObjeto);
         Button buttonEditarObjeto = convertView.findViewById(R.id.buttonEditarObjeto);
         Button buttonExcluirObjeto = convertView.findViewById(R.id.buttonExcluirObjeto);
 
@@ -65,8 +63,8 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
         buttonEditarObjeto.setOnClickListener(view -> {
             Intent it_tela_editacao_objeto = new Intent(context, EditacaoObjetoActivity.class);
 
-            it_tela_editacao_objeto.putExtra("objetoId", objeto.getNumPatrim());
-
+            it_tela_editacao_objeto.putExtra("numPatrim", objeto.getNumPatrim());
+            it_tela_editacao_objeto.putExtra("tipoIdFk", objeto.getTipoIdFk());
             it_tela_editacao_objeto.putExtra("nomeFuncionario", objeto.getNomeFuncionario());
 
             context.startActivity(it_tela_editacao_objeto);

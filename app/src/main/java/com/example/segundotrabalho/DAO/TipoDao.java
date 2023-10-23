@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.segundotrabalho.model.Tipo;
+import com.example.segundotrabalho.model.TipoObjeto;
 
 import java.util.List;
 
@@ -15,9 +16,11 @@ public interface TipoDao {
     @Insert
     public long insertTipo(Tipo tipo);
     @Query("SELECT * FROM tipo")
-    List<Tipo> getAll();
+    public List<Tipo> getAll();
     @Update
     public void updateTipo(Tipo... tipo);
     @Delete
     public void deleteTipo(Tipo... tipo);
+    @Query("SELECT * FROM tipo INNER JOIN objeto ON tipo.tipo_id = objeto.tipo_id_fk")
+    public List<TipoObjeto> getTiposAndObjetos();
 }

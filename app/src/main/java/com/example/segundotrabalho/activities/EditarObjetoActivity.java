@@ -35,13 +35,14 @@ public class EditarObjetoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_objeto);
 
-        list = findViewById(R.id.listViewObjetos);
+        list = findViewById(R.id.listViewTipoObjeto);
         nomeFuncionarioText = findViewById(R.id.editTextNomeFuncionario);
 
         db = AppDatabase.getAppDatabase(getApplicationContext());
         spinner = findViewById(R.id.spinnerTipo);
         populeSpinner();
 
+        errorText = findViewById(R.id.textViewErrorEditarObjeto);
 
         //adicionar adapter
         objetos = db.objetoDao().getAll();
@@ -80,25 +81,24 @@ public class EditarObjetoActivity extends AppCompatActivity {
 
         nomeFuncionarioValue = nomeFuncionarioText.getText().toString();
 
-        db = AppDatabase.getAppDatabase(getApplicationContext());
+        if (nomeFuncionarioValue.isEmpty()) {
+            errorText.setVisibility(View.VISIBLE);
+        } else {
+            Tipo objectSelected = (Tipo) spinner.getSelectedItem();
+            tipoId = objectSelected.getTipoId();
+            Objeto objeto = new Objeto(tipoId, dataRegistro, nomeFuncionarioValue);
 
-        Tipo objectSelected = (Tipo) spinner.getSelectedItem();
+            long resultado = db.objetoDao().insertObjeto(objeto);
 
-        tipoId = objectSelected.getTipoId();
-
-        Objeto objeto = new Objeto(tipoId, dataRegistro, nomeFuncionarioValue);
-
-      long resultado = db.objetoDao().insertObjeto(objeto);
-
-        if (resultado >= 0) {
-            objeto.setNumPatrim(resultado);
-            adapter.addObjeto(objeto);
-            nomeFuncionarioText.setText("");
+            if (resultado >= 0) {
+                objeto.setNumPatrim(resultado);
+                adapter.addObjeto(objeto);
+                nomeFuncionarioText.setText("");
+            }
+            else {
+                Log.e("Inserção", "Falha na inserção");
+            }
         }
-        else {
-            Log.e("Inserção", "Falha na inserção");
-        }
-
     }
 
     public void voltarButton(View v) {
