@@ -1,5 +1,6 @@
 package com.example.segundotrabalho.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,9 @@ public class EditarTipoActivity extends AppCompatActivity {
     EditText tipoText, descricaoText;
     private TextView errorText;
     List<Tipo> tipos;
+
+    public static final int REQUEST_CODE_EDICAO_TIPO = 1;
+    public static final int RESULT_SUCESSO_EDICAO_TIPO = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +70,16 @@ public class EditarTipoActivity extends AppCompatActivity {
             } else {
                 Log.e("Inserção", "Falha na inserção");
             }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_EDICAO_TIPO && resultCode == RESULT_SUCESSO_EDICAO_TIPO) {
+            tipos = db.tipoDao().getAll();
+            adapter.atualizarDados(tipos);
         }
     }
 

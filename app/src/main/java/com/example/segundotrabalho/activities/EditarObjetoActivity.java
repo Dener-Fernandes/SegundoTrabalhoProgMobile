@@ -1,5 +1,6 @@
 package com.example.segundotrabalho.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,9 @@ public class EditarObjetoActivity extends AppCompatActivity {
     EditText nomeFuncionarioText;
     private TextView errorText;
     List<Objeto> objetos;
+
+    public static final int REQUEST_CODE_EDITACAO_OBJETO = 1;
+    public static final int RESULT_SUCESSO_EDITACAO_OBJETO = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +102,16 @@ public class EditarObjetoActivity extends AppCompatActivity {
             else {
                 Log.e("Inserção", "Falha na inserção");
             }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_EDITACAO_OBJETO && resultCode == RESULT_SUCESSO_EDITACAO_OBJETO) {
+            objetos = db.objetoDao().getAll();
+            adapter.atualizarDados(objetos);
         }
     }
 

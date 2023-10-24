@@ -1,5 +1,6 @@
 package com.example.segundotrabalho.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.example.segundotrabalho.DAO.TipoDao;
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.activities.EdicaoTipoActivity;
+import com.example.segundotrabalho.activities.EditarObjetoActivity;
+import com.example.segundotrabalho.activities.EditarTipoActivity;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Tipo;
 
@@ -33,6 +36,12 @@ public class TipoAdapter extends BaseAdapter {
         tipoList.add(tipo);
         notifyDataSetChanged(); // Notifica o adaptador sobre a adição
     }
+
+    public void atualizarDados(List<Tipo> tipoList) {
+        this.tipoList = tipoList;
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getCount() {
@@ -73,7 +82,7 @@ public class TipoAdapter extends BaseAdapter {
             it_tela_edicao_tipo.putExtra("tipo", tipo.getTipo());
             it_tela_edicao_tipo.putExtra("descricao", tipo.getDescricao());
 
-            context.startActivity(it_tela_edicao_tipo);
+            ((Activity) context).startActivityForResult(it_tela_edicao_tipo, EditarTipoActivity.REQUEST_CODE_EDICAO_TIPO);
         });
 
         buttonExcluir.setOnClickListener(view -> {
