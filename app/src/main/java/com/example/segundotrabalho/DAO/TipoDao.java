@@ -23,4 +23,7 @@ public interface TipoDao {
     public void deleteTipo(Tipo... tipo);
     @Query("SELECT * FROM tipo INNER JOIN objeto ON tipo.tipo_id = objeto.tipo_id_fk")
     public List<TipoObjeto> getTiposAndObjetos();
+
+    @Query("SELECT * FROM tipo INNER JOIN objeto ON tipo.tipo_id = objeto.tipo_id_fk WHERE tipo.tipo = :tipoTipo")
+    public List<TipoObjeto> getByFilter(String tipoTipo);
 }

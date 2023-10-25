@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.segundotrabalho.DAO.TipoDao;
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.database.AppDatabase;
+import com.example.segundotrabalho.model.Objeto;
 import com.example.segundotrabalho.model.Tipo;
 import com.example.segundotrabalho.model.TipoObjeto;
 
@@ -25,6 +26,12 @@ public class ListarObjetosAdapter  extends BaseAdapter {
         this.context = context;
         this.tipoObjetoList = tipoObjetoList;
         this.tipoDao = AppDatabase.getAppDatabase(context).tipoDao();
+    }
+
+    public void atualizarDados(List<TipoObjeto> tipoObjetoList) {
+        this.tipoObjetoList.clear();
+        this.tipoObjetoList.addAll(tipoObjetoList);
+        notifyDataSetChanged();
     }
 
     @Override

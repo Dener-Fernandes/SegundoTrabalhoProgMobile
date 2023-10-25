@@ -54,6 +54,15 @@ public class ListarObjetosActivity extends AppCompatActivity {
         }
     }
 
+    public void buscarObjetosPorFiltro (View v) {
+        Tipo objectSelected = (Tipo) spinnerTipos.getSelectedItem();
+        String tipoTipo = objectSelected.getTipo();
+
+        tipoObjetoList = db.tipoDao().getByFilter(tipoTipo);
+        adapter.atualizarDados(tipoObjetoList);
+
+    }
+
     public void voltarButton(View v) {
         this.finish();
     }

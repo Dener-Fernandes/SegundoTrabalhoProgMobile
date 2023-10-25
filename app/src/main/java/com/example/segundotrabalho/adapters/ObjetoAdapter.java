@@ -38,7 +38,8 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
     }
 
     public void atualizarDados(List<Objeto> objetoList) {
-        this.objetoList = objetoList;
+        this.objetoList.clear();
+        this.objetoList.addAll(objetoList);
         notifyDataSetChanged();
     }
 
