@@ -73,8 +73,6 @@ public class EditarObjetoActivity extends AppCompatActivity {
         }
     }
 
-
-
     //Fazer para salvar objeto, posteriormente adicionarei o adapter aí
     public void adicionarObjeto(View v) {
         String nomeFuncionarioValue;
