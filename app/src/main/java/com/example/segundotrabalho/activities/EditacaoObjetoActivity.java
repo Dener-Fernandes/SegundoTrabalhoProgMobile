@@ -21,7 +21,6 @@ import java.util.List;
 public class EditacaoObjetoActivity extends AppCompatActivity {
 
     AppDatabase db;
-    private Spinner spinner;
     private EditText editTextNomeFuncionario; // Adicione outros campos conforme necessário
     int numPatrim, tipoIdFk;
     String nomeFuncionario;
@@ -46,26 +45,8 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
         editTextNomeFuncionario.setText(nomeFuncionario);
 
         errorText = findViewById(R.id.textViewErrorEditacaoObjeto);
-
-        spinner = findViewById(R.id.spinnerTipo);
-        populeSpinner();
     }
 
-    private void populeSpinner() {
-        // Obtém a lista de tipos do banco de dados
-        List<Tipo> tipos = db.tipoDao().getAll(); // Substitua isso pela maneira correta de obter os tipos
-
-        if (!tipos.isEmpty()) {
-            // Crie um ArrayAdapter para o Spinner usando os tipos obtidos do banco de dados
-            ArrayAdapter<Tipo> adapter = new ArrayAdapter<>(this, R.layout.spinner_tipos, tipos);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            // Defina o adaptador para o Spinner
-            spinner.setAdapter(adapter);
-        } else {
-            // Se não houver tipos disponíveis, você pode mostrar uma mensagem ao usuário ou tomar a ação apropriada.
-        }
-    }
 
     public void atualizarObjeto(View v) {
         String novoNomeFuncionario;

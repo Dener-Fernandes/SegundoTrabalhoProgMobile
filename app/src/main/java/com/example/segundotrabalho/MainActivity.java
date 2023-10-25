@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.segundotrabalho.activities.AdicionarTipoActivity;
 import com.example.segundotrabalho.activities.EditarObjetoActivity;
 import com.example.segundotrabalho.activities.EditarTipoActivity;
 import com.example.segundotrabalho.activities.ListarObjetosActivity;
@@ -21,11 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void abrirTelaAdicionarTIpo(View v) {
-        Intent it_tela_adicionar_tipo = new Intent(this, AdicionarTipoActivity.class);
-        startActivity(it_tela_adicionar_tipo);
     }
 
     public void abrirTelaEditarTipo(View v) {

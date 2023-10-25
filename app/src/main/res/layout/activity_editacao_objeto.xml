@@ -12,24 +12,24 @@
         android:layout_width="130dp"
         android:layout_height="54dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="160dp"
         android:onClick="atualizarObjeto"
         android:text="@string/salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/buttonCancelar"
-        app:layout_constraintTop_toBottomOf="@id/spinnerTipo" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeFuncionario" />
 
     <Button
         android:id="@+id/buttonCancelar"
         android:layout_width="134dp"
         android:layout_height="56dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="160dp"
         android:onClick="voltarButton"
         android:text="@string/cancelar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerTipo" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeFuncionario" />
 
     <TextView
         android:id="@+id/textViewEditarObjeto"
@@ -43,23 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinnerTipo"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewEditarObjeto" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutNomeFuncionario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spinnerTipo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        tools:layout_editor_absoluteY="267dp">
 
     </com.google.android.material.textfield.TextInputLayout>
 

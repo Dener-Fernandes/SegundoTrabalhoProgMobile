@@ -1,10 +1,19 @@
 package com.example.segundotrabalho.model;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "objeto")
+@Entity(tableName = "objeto",
+        foreignKeys = {
+                @ForeignKey(entity = Tipo.class,
+                        parentColumns = "tipo_id",
+                        childColumns = "tipo_id_fk",
+                        onDelete = CASCADE)
+        })
 public class Objeto {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "num_patrim")
