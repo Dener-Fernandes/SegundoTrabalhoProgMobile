@@ -56,6 +56,9 @@ public class EdicaoTipoActivity extends AppCompatActivity {
             Tipo tipo = new Tipo(novoTipo, novaDescricao);
             tipo.tipoId = tipoId;
             db.tipoDao().updateTipo(tipo);
+
+            setResult(EditarTipoActivity.RESULT_SUCESSO_EDICAO_TIPO);
+            finish();
         }
     }
 

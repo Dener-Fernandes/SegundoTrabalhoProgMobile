@@ -1,5 +1,6 @@
 package com.example.segundotrabalho.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.example.segundotrabalho.DAO.ObjetoDao;
 import com.example.segundotrabalho.R;
 import com.example.segundotrabalho.activities.EditacaoObjetoActivity;
+import com.example.segundotrabalho.activities.EditarObjetoActivity;
 import com.example.segundotrabalho.database.AppDatabase;
 import com.example.segundotrabalho.model.Objeto;
 
@@ -33,6 +35,11 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
         objeto.setNumPatrim((int) objeto.getNumPatrim()); // Atualiza o ID do objeto Tipo com o valor gerado
         objetoList.add(objeto);
         notifyDataSetChanged(); // Notifica o adaptador sobre a adição
+    }
+
+    public void atualizarDados(List<Objeto> objetoList) {
+        this.objetoList = objetoList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -67,7 +74,7 @@ public class ObjetoAdapter extends ArrayAdapter<Objeto> {
             it_tela_editacao_objeto.putExtra("tipoIdFk", objeto.getTipoIdFk());
             it_tela_editacao_objeto.putExtra("nomeFuncionario", objeto.getNomeFuncionario());
 
-            context.startActivity(it_tela_editacao_objeto);
+            ((Activity) context).startActivityForResult(it_tela_editacao_objeto, EditarObjetoActivity.REQUEST_CODE_EDITACAO_OBJETO);
         });
 
         buttonExcluirObjeto.setOnClickListener(view -> {

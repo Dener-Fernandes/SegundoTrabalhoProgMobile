@@ -3,7 +3,6 @@ package com.example.segundotrabalho.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -82,6 +81,9 @@ public class EditacaoObjetoActivity extends AppCompatActivity {
             Objeto objeto = new Objeto(tipoIdFk, dataRegistro, novoNomeFuncionario);
             objeto.setNumPatrim(numPatrim);
             db.objetoDao().updateObjeto(objeto);
+
+            setResult(EditarObjetoActivity.RESULT_SUCESSO_EDITACAO_OBJETO);
+            finish();
         }
     }
 
