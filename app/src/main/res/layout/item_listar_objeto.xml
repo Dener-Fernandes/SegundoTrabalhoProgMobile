@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_listar_objeto.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textNomeTipoObjeto"
+        android:layout_width="378dp"
+        android:layout_height="36dp"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textViewTituloNomeFuncionario"
+            android:layout_width="423dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="top"
+            android:text="NOME DO FUNCIONÁRIO:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textNomeFuncionarioTipoObjeto"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_weight="3"
+            android:gravity="top"
+            android:textSize="16sp" />
+</LinearLayout>
