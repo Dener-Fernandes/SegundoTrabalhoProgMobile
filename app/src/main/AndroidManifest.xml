@@ -28,9 +28,6 @@
             android:name=".activities.ListarObjetosActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AdicionarTipoActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

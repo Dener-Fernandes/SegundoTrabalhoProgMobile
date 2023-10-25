@@ -1,6 +1,7 @@
 package com.example.segundotrabalho.activities;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -50,8 +51,17 @@ public class ListarObjetosActivity extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerTipos.setAdapter(adapter);
         } else {
-            // Se não houver tipos disponíveis, você pode mostrar uma mensagem ao usuário ou tomar a ação apropriada.
+            Log.e("Tag", "Tipos vazios");
         }
+    }
+
+    public void buscarObjetosPorFiltro (View v) {
+        Tipo objectSelected = (Tipo) spinnerTipos.getSelectedItem();
+        String tipoTipo = objectSelected.getTipo();
+
+        tipoObjetoList = db.tipoDao().getByFilter(tipoTipo);
+        adapter.atualizarDados(tipoObjetoList);
+
     }
 
     public void voltarButton(View v) {
